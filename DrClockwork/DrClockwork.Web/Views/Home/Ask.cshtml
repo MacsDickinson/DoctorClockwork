@@ -1,0 +1,18 @@
+﻿@model DrClockwork.Web.Controllers.AskViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dr. Clockwork</title>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li>@Model.SMS.To: @Model.SMS.Message</li>
+                <li>@Model.Answer</li>
+            </ul>
+        </div>
+    </body>
+</html>
