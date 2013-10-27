@@ -18,7 +18,8 @@ namespace DrClockwork.Nancy.Modules
 
                 var model = new IndexViewModel
                 {
-                    Questions = questions.Select(x => new QuestionViewModel(x)).ToList()
+                    Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
+                    path = System.Web.HttpContext.Current.Server.MapPath(@"~/config")
                 };
 
                 return View["Index", model];
