@@ -94,6 +94,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="config\DefaultPredicates.xml" />
+    <Content Include="config\GenderSubstitutions.xml" />
+    <Content Include="config\Person2Substitutions.xml" />
+    <Content Include="config\PersonSubstitutions.xml" />
+    <Content Include="config\Settings.xml" />
+    <Content Include="config\Splitters.xml" />
+    <Content Include="config\Substitutions.xml" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
@@ -185,9 +192,7 @@
       <Name>DrClockwork.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="config\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

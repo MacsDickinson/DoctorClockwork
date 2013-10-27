@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using DrClockwork.Domain.Models;
 using DrClockwork.Nancy.ViewModels;
 using Microsoft.AspNet.SignalR;
@@ -19,9 +20,14 @@ namespace DrClockwork.Nancy.Modules
                 var model = new IndexViewModel
                 {
                     Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
-                    path = System.Web.HttpContext.Current.Server.MapPath(@"~/config")
+                    path = System.Web.HttpContext.Current.Server.MapPath(@"~/config"),
+                    FileExists = File.Exists(@"C:\DWASFiles\Sites\drclockwork\VirtualDirectory0\site\wwwroot\config\Settings.xml"),
+                    DirectoryExists = Directory.Exists(@"C:\DWASFiles\Sites\drclockwork\VirtualDirectory0\site\wwwroot\config\Settings.xml")
                 };
-
+                model.Files = model.DirectoryExists
+                    ? string.Join(", ",
+                        Directory.GetFiles(@"C:\DWASFiles\Sites\drclockwork\VirtualDirectory0\site\wwwroot\config"))
+                    : "";
                 return View["Index", model];
             };
         }
