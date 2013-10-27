@@ -4,18 +4,56 @@
     font-family: "atrament-web",sans-serif;
     padding: 15px;
 }
+
 .mad-prof {
     text-align: center;
 }
+
 h1, h2, h3, h4, h5 {
     font-family: "atrament-web",sans-serif;
 }
-.panel-body { font-size: 30px; }
+
+.panel-body {
+    font-size: 30px;
+}
+
 .mad-prof img {
     display: block;
     margin: 0 auto;
     max-width: 400px;
     width: 100%;
+}
+
+.creds {
+    color: #d1d2d4;
+}
+
+    .creds h1 {
+        font-size: 5.5em;
+    }
+
+    .creds h2 {
+        font-size: 4.0em;
+    }
+
+.creads-large-placeholder {
+    display: none;
+}
+.creads-small-placeholder {
+    display: block;
+}
+@media (min-width: 992px) {
+    .creds {
+        position: fixed;
+        top: 2%;
+        left: 8%;
+    }
+    .creads-large-placeholder {
+        display: block;
+    }
+    .creads-small-placeholder {
+        display: none;
+    }
 }
 
 /*@font-face {
