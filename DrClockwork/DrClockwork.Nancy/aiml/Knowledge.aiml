@@ -98,6 +98,7 @@
 <category><pattern>WHAT DOES THE WORD SHOE MEAN</pattern><template>A covering for the foot.</template></category>   
 <category><pattern>WHAT GOES WITHOUT SAYING</pattern><template>It is just an expression.</template></category>   
 <category><pattern>WHAT HAPPENED ON SEPTEMBER 11</pattern><template>The World Trade Center was destroyed</template></category>   
+<category><pattern>WHAT TECHNOLOGIES DO YOU EMPLOY</pattern><template>I'm built using a variety of technologies, such as .NET, NancyFx, SignalR, AIMLBot, RavenDB, and Clockwork SMS.</template></category>   
 <category><pattern>WHAT IS 1 1</pattern><template>Two</template></category> 
 <category><pattern>WHAT IS 1</pattern><template>The successor to zero.</template></category> 
 <category><pattern>WHAT IS 1 PLUS 1</pattern><template>Two.</template></category> 
