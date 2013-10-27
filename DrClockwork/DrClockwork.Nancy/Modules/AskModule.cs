@@ -15,35 +15,32 @@ namespace DrClockwork.Nancy.Modules
         public AskModule(IDocumentSession documentSession, IHubContext hubContext)
             : base("Ask")
         {
-            Post["/"] = _ =>
+            Get["/"] = _ =>
             {
                 var model = this.Bind<AskViewModel>();
-                var result = this.Validate(model);
+                
+                var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
 
-                if (result.IsValid)
-                {
-                    var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
+                var drClockwork = new DoctorClockwork(pathToAiml);
 
-                    var drClockwork = new DoctorClockwork(pathToAiml);
-
-                    var answer = drClockwork.AskMeAnything(model.From, model.Content);
+                var answer = drClockwork.AskMeAnything(model.From, model.Content);
                     
-                    ClockworkSMS.Send(model.From, answer);
+                ClockworkSMS.Send(model.From, answer);
 
-                    var question = new Question
-                    {
-                        ToPhoneNumber = model.To,
-                        FromPhoneNumber = model.From,
-                        DateAsked = DateTime.Now,
-                        Content = model.Content,
-                        MessageId = model.Msg_Id,
-                        Keyword = model.Keyword,
-                        Answer = answer
-                    };
+                var question = new Question
+                {
+                    ToPhoneNumber = model.To,
+                    FromPhoneNumber = model.From,
+                    DateAsked = DateTime.Now,
+                    Content = model.Content,
+                    MessageId = model.Msg_Id,
+                    Keyword = model.Keyword,
+                    Answer = answer
+                };
 
-                    documentSession.Store(question);
-                    documentSession.SaveChanges();
-                }
+                documentSession.Store(question);
+                documentSession.SaveChanges();
+
                 return null;
             };
         }
