@@ -5,18 +5,6 @@
         var $convo = $('<div />', {            
             'class': 'conversation'
         });
-        var $question = $('<div \>', {
-            'class': 'bubble bubble-question bubble-new fade'
-        });
-        $question.append($('<h3 />', {
-            text: name
-        }).append('<span />', {
-            'class': 'glyphicon glyphicon-phone'
-        }));
-        $question.append($('<p />', {
-            text: question
-        }));
-        $convo.append($question);
         var $answer = $('<div \>', {
             'class': 'bubble bubble-answer bubble-new fade'
         });
@@ -29,6 +17,18 @@
             text: ' ' + answer
         }));
         $convo.append($answer);
+        var $question = $('<div \>', {
+            'class': 'bubble bubble-question bubble-new fade'
+        });
+        $question.append($('<h3 />', {
+            text: name
+        }).append('<span />', {
+            'class': 'glyphicon glyphicon-phone'
+        }));
+        $question.append($('<p />', {
+            text: question
+        }));
+        $convo.append($question);
         $('#questions').prepend($convo);
     };
 
