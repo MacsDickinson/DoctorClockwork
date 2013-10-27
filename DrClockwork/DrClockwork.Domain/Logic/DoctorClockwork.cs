@@ -5,7 +5,7 @@ namespace DrClockwork.Domain.Logic
     public class DoctorClockwork
     {
         private readonly string _aimlPath;
-        private const string SettingsPath = @"C:\config\Settings.xml";
+        private const string SettingsPath = @"C:\DWASFiles\Sites\drclockwork\VirtualDirectory0\site\wwwroot\config\Settings.xml";
 
         public DoctorClockwork(string aimlPath)
         {
