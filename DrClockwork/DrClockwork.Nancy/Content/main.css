@@ -11,7 +11,7 @@
 h1, h2, h3, h4, h5 {
     font-family: "atrament-web",sans-serif;
 }
-
+.creators a { color: #fff; }
 .panel-body {
     font-size: 30px;
 }
