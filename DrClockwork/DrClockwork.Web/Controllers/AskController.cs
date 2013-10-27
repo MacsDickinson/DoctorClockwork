@@ -3,6 +3,7 @@ using System.Net;
 using System.Web.Mvc;
 using AIMLbot;
 using Clockwork;
+using DrClockwork.Web.Models;
 
 namespace DrClockwork.Web.Controllers
 {
@@ -13,14 +14,14 @@ namespace DrClockwork.Web.Controllers
 
         public ActionResult Index(AskViewModel viewModel)
         {
-            if (string.IsNullOrEmpty(viewModel.SMS.To))
+            if (string.IsNullOrEmpty(viewModel.To))
             {
-                viewModel.SMS.To = "07967172773";
+                viewModel.From = "447967172773";
             }
 
-            if (string.IsNullOrEmpty(viewModel.SMS.Message))
+            if (string.IsNullOrEmpty(viewModel.Content))
             {
-                viewModel.SMS.Message = "I am hungry";
+                viewModel.Content = "I am hungry";
             }
 
             var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
@@ -32,15 +33,15 @@ namespace DrClockwork.Web.Controllers
             clockworkBot.isAcceptingUserInput = false;
             clockworkBot.isAcceptingUserInput = true;
 
-            var patient = new User(viewModel.SMS.To, clockworkBot);
-            var request = new Request(viewModel.SMS.Message, patient, clockworkBot);
+            var patient = new User(viewModel.From, clockworkBot);
+            var request = new Request(viewModel.Content, patient, clockworkBot);
             var answer = clockworkBot.Chat(request);
             viewModel.Answer = answer.Output;
 
             try
             {
                 var api = new API("4832b0bded15eb58c54bb7d3cf01a08029bb41d8");
-                var sms = new Clockwork.SMS { To = viewModel.SMS.To, Message = answer.Output };
+                var sms = new SMS { To = viewModel.From, Message = answer.Output };
                 var result = api.Send(sms);
 
                 if (result.Success)
