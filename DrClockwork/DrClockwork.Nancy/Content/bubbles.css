@@ -1,4 +1,8 @@
-﻿.bubble {
+﻿.conversation {
+    margin-bottom: 30px;
+    position: relative;
+}
+.bubble {
     position: relative;
     width: 80%;
     min-height: 120px;
@@ -7,6 +11,7 @@
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
     border-radius: 24px;
+    display: block;
 }
     .bubble:after {
         content: '';
@@ -19,27 +24,30 @@
     }
 
 .bubble-answer {
-    background: #A3FF85;
+    background: #56a399;
+    float: left;
 }
 
     .bubble-answer:after {
-        border-color: transparent #A3FF85;
+        border-color: transparent #56a399;
         border-width: 15px 15px 15px 0;
         left: -15px;
     }
+
 .bubble-question {
-    background: #56a399;
+    float: right;
+    background: #A3FF85;
 }
 
     .bubble-question:after {
-        border-color: transparent #56a399;
+        border-color: transparent #A3FF85;
         border-width: 15px 0 15px 15px;
         right: -15px;
     }
 .bubble h3 {
     margin: 0 0 8px;
     font-weight: bold;
-    font-size: 40px; 
+    font-size: 25px; 
 }
 
 .bubble p {
