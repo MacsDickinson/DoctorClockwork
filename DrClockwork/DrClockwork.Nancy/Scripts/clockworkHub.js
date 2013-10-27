@@ -3,7 +3,7 @@
 
     hub.client.broadcastAnswer = function (question, answer, name) {
         var $question = $('<div \>', {
-            'class': 'bubble bubble-question bubble-new'
+            'class': 'bubble bubble-question bubble-new fade'
         });
         $question.append($('<h3 />', {
             text: name
@@ -13,7 +13,7 @@
         }));
         $('#questions').prepend($question);
         var $answer = $('<div \>', {
-            'class': 'bubble bubble-answer bubble-new'
+            'class': 'bubble bubble-answer bubble-new fade'
         });
         $answer.append($('<h3 />', {
             text: 'Dr Clockwork'
