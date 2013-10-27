@@ -115,9 +115,11 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="ClockworkHub.cs" />
+    <Compile Include="Modules\AskModule.cs" />
     <Compile Include="Modules\QuestionModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raven\RavenSessionProvider.cs" />
+    <Compile Include="ViewModels\AskViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
   </ItemGroup>
