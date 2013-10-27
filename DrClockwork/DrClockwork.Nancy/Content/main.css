@@ -6,6 +6,7 @@
 .mad-prof {
     text-align: center;
 }
+h1, h2, h3, h4, h5 { font-family: "atrament-web",sans-serif; }
 .panel-body { font-size: 30px; }
 .mad-prof img {
     display: block;
