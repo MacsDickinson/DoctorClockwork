@@ -49,7 +49,7 @@ namespace DrClockwork.Nancy.Modules
                 }
                 catch (Exception ex)
                 {
-                    return ex.Message;
+                    return string.Format("Message: {0}\r\nDetail {1}", ex.Message, ex.StackTrace);
                 }
                 
             };
