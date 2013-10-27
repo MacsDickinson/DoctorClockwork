@@ -10,7 +10,7 @@ namespace DrClockwork.Nancy.Modules
 {
     public class QuestionModule : NancyModule
     {
-        public QuestionModule(IDocumentSession documentSession, IHubContext hubContext)
+        public QuestionModule(IDocumentSession documentSession)
         {
             Get["/"] = _ =>
             {
