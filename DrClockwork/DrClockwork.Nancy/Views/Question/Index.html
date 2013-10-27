@@ -2,13 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Dr Clockwork</title>
+    <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap.min.css" type="text/css" />
+    <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap-responsive.min.css" type="text/css" />
 </head>
     <body>
-        
+        <header class="container">
+            <div class="span4">
+                <img src="/Content/dr-clockwork-logo.png" alt="Dr. Clockwork - Ask me anything"/>
+            </div>
+            <div class="span8">
+                <h1>Dr. Clockwork</h1>
+            </div>
+        </header>
         @Each.Questions
         <div class="question">
             <span>@Current.Content - @Current.Answer</span>
         </div>
         @EndEach
+        <script src="/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="/Scripts/bootstrap.min.js"></script>
     </body>
 </html>

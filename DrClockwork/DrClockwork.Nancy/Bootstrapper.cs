@@ -3,6 +3,7 @@ using DrClockwork.Nancy.Raven;
 using Microsoft.AspNet.SignalR;
 using Nancy;
 using Nancy.Bootstrapper;
+using Nancy.Conventions;
 using Nancy.Session;
 using Nancy.TinyIoc;
 using Raven.Client;
@@ -54,6 +55,13 @@ namespace DrClockwork.Nancy
             CookieBasedSessions.Enable(pipelines);
             RouteTable.Routes.MapHubs();
             container.Register(GlobalHost.ConnectionManager.GetHubContext<ClockworkHub>());
+        }
+
+        protected override void ConfigureConventions(NancyConventions nancyConventions)
+        {
+            base.ConfigureConventions(nancyConventions);
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("Scripts"));
         }
     }
 }
