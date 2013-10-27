@@ -107,6 +107,7 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bottom-left-left.pdn" />
     <Content Include="Content\bubbles.css" />
+    <Content Include="Content\clockwork-logo-3.png" />
     <Content Include="Content\clockwork-logo.png" />
     <Content Include="Content\dark_leather.png" />
     <Content Include="Content\dr-clockwork-logo-2.png" />
