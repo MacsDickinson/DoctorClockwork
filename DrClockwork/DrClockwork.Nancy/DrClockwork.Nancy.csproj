@@ -99,16 +99,18 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.signalR-1.1.3.js" />
     <Content Include="Scripts\jquery.signalR-1.1.3.min.js" />
-    <Content Include="Views\Ask\Index.html" />
+    <Content Include="Views\Question\Index.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="ClockworkHub.cs" />
-    <Compile Include="Modules\AskModule.cs" />
+    <Compile Include="Modules\QuestionModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raven\RavenSessionProvider.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -119,7 +121,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DrClockwork.Domain\DrClockwork.Domain.csproj">
+      <Project>{E288176D-19B2-429E-A86A-45540D952D53}</Project>
+      <Name>DrClockwork.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
