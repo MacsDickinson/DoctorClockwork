@@ -42,8 +42,8 @@ namespace DrClockwork.Nancy.Modules
 
                     documentSession.Store(question);
                     documentSession.SaveChanges();
-
-                    hubContext.Clients.All.broadcastAnswer(model.Content, answer, model.From);
+                    var from = string.Format("{0}*****{1}", model.From.Substring(0, 2), model.From.Substring(7, model.From.Length - 7));
+                    hubContext.Clients.All.broadcastAnswer(model.Content, answer, from);
 
                     return null;
                 }
