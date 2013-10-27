@@ -21,6 +21,7 @@ namespace DrClockwork.Nancy.Modules
                 {
                     Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
                 };
+                model.Count = model.Questions.Count();
                 return View["Index", model];
             };
         }

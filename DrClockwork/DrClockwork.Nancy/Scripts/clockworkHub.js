@@ -34,6 +34,8 @@
         }));
         $convo.append($question);
         $('#questions').prepend($convo);
+        var count = parseInt($('#question-count').val()) + 1;
+        $('#question-count').val(count);
     };
 
     $.connection.hub.start();
