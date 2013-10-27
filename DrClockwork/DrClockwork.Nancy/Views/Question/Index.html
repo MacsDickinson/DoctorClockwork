@@ -3,7 +3,6 @@
 <head>
     <title>Dr Clockwork</title>
     <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap.min.css" type="text/css" />
-    <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap-responsive.min.css" type="text/css" />
 </head>
     <body>
         <header class="container">
@@ -16,11 +15,13 @@
                 </div>
             </div>
         </header>
-        @Each.Questions
-        <div class="question">
-            <span>@Current.Content - @Current.Answer</span>
+        <div class="container">
+            @Each.Questions
+            <div class="question">
+                <span>@Current.Content - @Current.Answer</span>
+            </div>
+            @EndEach
         </div>
-        @EndEach
         <script src="/Scripts/jquery-1.9.1.min.js"></script>
         <script src="/Scripts/bootstrap.min.js"></script>
     </body>
