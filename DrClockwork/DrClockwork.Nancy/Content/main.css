@@ -1,5 +1,4 @@
 ﻿body {
-    /*background-image: url(/Content/old_mathematics.png);*/
     background-image: url(/Content/dark_leather.png);
     font-family: "atrament-web",sans-serif;
     padding: 15px;
@@ -59,6 +58,9 @@ h1, h2, h3, h4, h5 {
     display: block;
 }
 @media (min-width: 992px) {
+    body {
+        background-attachment: fixed;
+    }
     .creds {
         position: fixed;
         top: 2%;
