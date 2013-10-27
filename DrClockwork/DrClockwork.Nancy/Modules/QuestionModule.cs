@@ -14,9 +14,11 @@ namespace DrClockwork.Nancy.Modules
         {
             Get["/"] = _ =>
             {
+                var questions = documentSession.Query<Question>().ToList();
+
                 var model = new IndexViewModel
                 {
-                    Questions = documentSession.Query<Question>().Select(x => new QuestionViewModel(x)).ToList()
+                    Questions = questions.Select(x => new QuestionViewModel(x)).ToList()
                 };
 
                 return View["Index", model];
