@@ -43,7 +43,7 @@ namespace DrClockwork.Nancy.Modules
                     documentSession.Store(question);
                     documentSession.SaveChanges();
 
-                    hubContext.Clients.All.broadcastAnswer(model.Content, answer);
+                    hubContext.Clients.All.broadcastAnswer(model.Content, answer, model.From);
 
                     return null;
                 }
