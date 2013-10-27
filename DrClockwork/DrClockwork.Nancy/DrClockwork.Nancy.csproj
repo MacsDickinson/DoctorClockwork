@@ -95,6 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bottom-left-left.pdn" />
+    <Content Include="Content\dr-clockwork-logo.png" />
+    <Content Include="Content\mad_scientist_frog.png" />
     <Content Include="Content\thin_pixel-7.ttf" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Content\background1.png" />
