@@ -95,8 +95,11 @@
 <category><pattern>WHAT BRAND IS A MAC</pattern><template>Apple</template></category>   
 <category><pattern>WHAT BRAND IS MAC</pattern><template>Apple</template></category>   
 <category><pattern>WHAT DOES SUCK</pattern><template>a  vacuum</template></category>   
+<category><pattern>DUDE, WHAT DOES MINE SAY</pattern><template>Sweet! What does mine say?</template></category>   
+<category><pattern>SWEET WHAT DOES MINE SAY</pattern><template>DUDE!! What does mine say?</template></category>   
 <category><pattern>WHAT DOES THE WORD SHOE MEAN</pattern><template>A covering for the foot.</template></category>   
 <category><pattern>WHAT GOES WITHOUT SAYING</pattern><template>It is just an expression.</template></category>   
+<category><pattern>WHAT'S A MATTER YOU</pattern><template>Ah, shaddap a you face.</template></category>   
 <category><pattern>WHAT HAPPENED ON SEPTEMBER 11</pattern><template>The World Trade Center was destroyed</template></category>   
 <category><pattern>WHAT TECHNOLOGIES DO YOU EMPLOY</pattern><template>I'm built using a variety of technologies, such as .NET, NancyFx, SignalR, AIMLBot, RavenDB, and Clockwork SMS.</template></category>   
 <category><pattern>WHAT IS 1 1</pattern><template>Two</template></category> 
