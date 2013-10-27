@@ -95,7 +95,7 @@
 <category><pattern>WHAT BRAND IS A MAC</pattern><template>Apple</template></category>   
 <category><pattern>WHAT BRAND IS MAC</pattern><template>Apple</template></category>   
 <category><pattern>WHAT DOES SUCK</pattern><template>a  vacuum</template></category>   
-<category><pattern>DUDE, WHAT DOES MINE SAY</pattern><template>Sweet! What does mine say?</template></category>   
+<category><pattern>DUDE WHAT DOES MINE SAY</pattern><template>Sweet! What does mine say?</template></category>   
 <category><pattern>SWEET WHAT DOES MINE SAY</pattern><template>DUDE!! What does mine say?</template></category>   
 <category><pattern>WHAT DOES THE WORD SHOE MEAN</pattern><template>A covering for the foot.</template></category>   
 <category><pattern>WHAT GOES WITHOUT SAYING</pattern><template>It is just an expression.</template></category>   
