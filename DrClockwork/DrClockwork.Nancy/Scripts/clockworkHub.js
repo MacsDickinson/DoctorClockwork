@@ -3,7 +3,7 @@
 
     hub.client.broadcastAnswer = function (question, answer) {
 
-        $('#questions').append('<div class="question"><span>' + question + ' - ' + answer + '</span></div>');
+        $('#questions').prepend('<div class="question"><span>' + question + ' - ' + answer + '</span></div>');
     };
 
     $.connection.hub.start();

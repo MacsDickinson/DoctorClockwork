@@ -15,7 +15,7 @@ namespace DrClockwork.Nancy.Modules
         {
             Get["/"] = _ =>
             {
-                var questions = documentSession.Query<Question>().ToList();
+                var questions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
 
                 var model = new IndexViewModel
                 {
