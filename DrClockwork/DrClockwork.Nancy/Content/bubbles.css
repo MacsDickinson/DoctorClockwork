@@ -1,27 +1,59 @@
 ﻿.bubble {
-position: relative;
-padding: 15px;
-margin: 100px 0 0.5em;
-color: #333;
-background: #eee;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
+    position: relative;
+    width: 80%;
+    min-height: 120px;
+    padding: 20px;
+    margin: 10px 0;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
 }
-blockquote {
-display: block;
--webkit-margin-before: 1em;
--webkit-margin-after: 1em;
--webkit-margin-start: 40px;
--webkit-margin-end: 40px;
+    .bubble:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        display: block;
+        width: 0;
+        z-index: 1;
+        top: 56px;
+    }
+
+.bubble-answer {
+    background: #A3FF85;
 }
-.bubble:after {
-content: "";
-position: absolute;
-top: -30px;
-left: 50px;
-border: 15px solid transparent;
-border-bottom-color: #eee;
-display: block;
-width: 0;
+
+    .bubble-answer:after {
+        border-color: transparent #A3FF85;
+        border-width: 15px 15px 15px 0;
+        left: -15px;
+    }
+.bubble-question {
+    background: #56a399;
+}
+
+    .bubble-question:after {
+        border-color: transparent #56a399;
+        border-width: 15px 0 15px 15px;
+        right: -15px;
+    }
+.bubble h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 40px; 
+}
+
+.bubble p {
+    font-size: 30px; 
+}
+
+.bubble.bubble-new {
+    opacity: 0;    
+}
+
+
+.bubble.bubble-new:target {
+    -webkit-transition: opacity 2.0s ease-in;
+    -moz-transition: opacity 2.0s ease-in;
+    -o-transition: opacity 2.0s ease-in;
+    opacity: 1;
 }

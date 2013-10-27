@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/Content/main.css" />
+    <link rel="stylesheet" href="/Content/bubbles.css" />
     <script type="text/javascript" src="//use.typekit.net/yyv7ikw.js"></script>
     <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 </head>
@@ -37,21 +38,17 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     @Each.Questions
-                    <div class="panel panel-primary answer">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Dr Clockwork</h3>
-                        </div>
-                        <div class="panel-body">
+                    <div class="bubble bubble-answer">
+                        <h3>Dr Clockwork</h3>
+                        <p>
                             @Current.Answer
-                        </div>
+                        </p>
                     </div>
-                    <div class="panel panel-info question">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">@Current.From - @Current.DateAsked</h3>
-                        </div>
-                        <div class="panel-body">
+                    <div class="bubble bubble-question">
+                        <h3>@Current.From</h3>
+                        <p>
                             @Current.Content
-                        </div>
+                        </p>
                     </div>
                     @EndEach
                 </div>
