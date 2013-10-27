@@ -4,8 +4,22 @@ namespace DrClockwork.Nancy.ViewModels
 {
     public class QuestionViewModel
     {
+        private string _from;
+
         public string To { get; set; }
-        public string From { get; set; }
+
+        public string From
+        {
+            get
+            {
+                return string.Format("{0}*****{1}", _from.Substring(0, 2), _from.Substring(7, _from.Length - 7));
+            }
+            set
+            {
+                _from = value;
+            }
+        }
+
         public string Content { get; set; }
         public string Msg_Id { get; set; }
         public string DateAsked { get; set; }
