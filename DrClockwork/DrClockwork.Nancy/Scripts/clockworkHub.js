@@ -11,9 +11,9 @@
         var $aH = $('<h3 />', {
             text: ' Dr Clockwork'
         });
-        $aH.prepend('<span />', {
+        $aH.prepend($('<span />', {
             'class': 'glyphicon glyphicon-phone'
-        });
+        }));
         $answer.append($aH);
         $answer.append($('<p />', {
             text: ' ' + answer
@@ -25,15 +25,17 @@
         var $qh = $('<h3 />', {
             text: ' ' + name
         });
-        $qh.prepend('<span />', {
+        $qh.prepend($('<span />', {
             'class': 'glyphicon glyphicon-phone'
-        });
+        }));
         $question.append($qh);
         $question.append($('<p />', {
             text: question
         }));
         $convo.append($question);
         $('#questions').prepend($convo);
+        var count = parseInt($('#question-count').text()) + 1;
+        $('#question-count').text(count);
     };
 
     $.connection.hub.start();
