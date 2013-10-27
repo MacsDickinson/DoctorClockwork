@@ -17,33 +17,41 @@ namespace DrClockwork.Nancy.Modules
         {
             Get["/"] = _ =>
             {
-                var model = this.Bind<AskViewModel>();
-                
-                var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
-
-                var drClockwork = new DoctorClockwork(pathToAiml);
-
-                var answer = drClockwork.AskMeAnything(model.From, model.Content);
-                    
-                ClockworkSMS.Send(model.From, answer);
-
-                var question = new Question
+                try
                 {
-                    ToPhoneNumber = model.To,
-                    FromPhoneNumber = model.From,
-                    DateAsked = DateTime.Now,
-                    Content = model.Content,
-                    MessageId = model.Msg_Id,
-                    Keyword = model.Keyword,
-                    Answer = answer
-                };
+                    var model = this.Bind<AskViewModel>();
 
-                documentSession.Store(question);
-                documentSession.SaveChanges();
+                    var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
 
-                hubContext.Clients.All.broadcastAnswer(model.Content, answer);
+                    var drClockwork = new DoctorClockwork(pathToAiml);
 
-                return null;
+                    var answer = drClockwork.AskMeAnything(model.From, model.Content);
+
+                    ClockworkSMS.Send(model.From, answer);
+
+                    var question = new Question
+                    {
+                        ToPhoneNumber = model.To,
+                        FromPhoneNumber = model.From,
+                        DateAsked = DateTime.Now,
+                        Content = model.Content,
+                        MessageId = model.Msg_Id,
+                        Keyword = model.Keyword,
+                        Answer = answer
+                    };
+
+                    documentSession.Store(question);
+                    documentSession.SaveChanges();
+
+                    hubContext.Clients.All.broadcastAnswer(model.Content, answer);
+
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return ex.Message;
+                }
+                
             };
         }
     }
