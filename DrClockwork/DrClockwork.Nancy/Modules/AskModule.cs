@@ -41,6 +41,8 @@ namespace DrClockwork.Nancy.Modules
                 documentSession.Store(question);
                 documentSession.SaveChanges();
 
+                hubContext.Clients.All.broadcastAnswer(model.Content, answer);
+
                 return null;
             };
         }

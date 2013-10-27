@@ -1,11 +1,9 @@
 ﻿$(function() {
     var hub = $.connection.clockworkHub;
 
-    hub.client.broadcastAnswer = function (question, name) {
-        debugger;
-        $('#questions').append($('<span />', {
-            text: question + ' - ' + name
-        }));
+    hub.client.broadcastAnswer = function (question, answer) {
+
+        $('#questions').append('<div class="question"><span>' + question + ' - ' + answer + '</span></div>');
     };
 
     $.connection.hub.start();
