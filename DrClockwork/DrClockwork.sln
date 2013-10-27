@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3A4D6C
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrClockwork.Nancy", "DrClockwork.Nancy\DrClockwork.Nancy.csproj", "{00578FA8-84C4-4112-9DF6-B0B16EFC8AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{B223B63E-F42F-4934-A22C-E1210C913560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B223B63E-F42F-4934-A22C-E1210C913560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B223B63E-F42F-4934-A22C-E1210C913560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00578FA8-84C4-4112-9DF6-B0B16EFC8AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00578FA8-84C4-4112-9DF6-B0B16EFC8AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00578FA8-84C4-4112-9DF6-B0B16EFC8AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00578FA8-84C4-4112-9DF6-B0B16EFC8AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
