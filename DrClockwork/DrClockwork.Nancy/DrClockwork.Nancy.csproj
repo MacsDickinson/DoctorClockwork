@@ -94,7 +94,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bottom-left-left.pdn" />
+    <Content Include="Content\thin_pixel-7.ttf" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Content\background1.png" />
+    <Content Include="Content\background2.png" />
+    <Content Include="Content\background3.png" />
+    <Content Include="Content\background4.png" />
+    <Content Include="Content\bottom-left.png" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Root.html" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -125,7 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DrClockwork.Domain\DrClockwork.Domain.csproj">
-      <Project>{E288176D-19B2-429E-A86A-45540D952D53}</Project>
+      <Project>{e288176d-19b2-429e-a86a-45540d952d53}</Project>
       <Name>DrClockwork.Domain</Name>
     </ProjectReference>
   </ItemGroup>

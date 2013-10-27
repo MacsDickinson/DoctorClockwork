@@ -1,3 +1,49 @@
 ﻿body {
     background: #3E3E42;
+    font-family: 'pixel';
+}
+
+@font-face {
+    font-family: "pixel";
+    src: url(thin_pixel-7.ttf) format("truetype");
+}
+
+.message-container {
+    width: 80%;
+    margin: 0 auto;
+    border: 8px solid black;
+    border-bottom: none;
+    background: #fff;
+}
+
+.message {
+    padding: 16px;
+    font-family: 'pixel', sans-serif; text-transform: uppercase;
+    overflow: auto;
+    border-bottom: 8px solid   ;
+    font-size: 32px;
+}
+
+.background-one {
+    background: url('background1.png');
+}
+
+.background-two {
+    background: url('background2.png');
+}
+
+.message-left {
+    background: #fff;
+    border: 4px solid;
+    width: 80%;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.message-right {
+    background: #fff;
+    border: 4px solid;
+    float: right;
+    width: 80%;
+    padding: 8px;
 }
