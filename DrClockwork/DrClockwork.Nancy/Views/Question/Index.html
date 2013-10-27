@@ -4,26 +4,59 @@
     <title>Dr Clockwork</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/Content/main.css"/>
 </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="/Content/mad_scientist_frog.png" alt="Dr. Clockwork - Ask me anything"/>
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <img src="/Content/mad_scientist_frog.png" alt="Dr. Clockwork - Ask me anything"/>
+                        <h1>I am Dr. Clockwork</h1>
+                        <h2>Ask me anything</h2>
+                        <p>Just text me on +44 7860 033 165</p>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <h1>I am Dr. Clockwork</h1>
-                    <h2>Ask me anything</h2>
-                    <p>Just text me on +44 7860 033 165</p>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        Blerb
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        Contributers
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        Techs Used
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="questions" class="container">
-            @Each.Questions
-            <div class="question">
-                <span>@Current.Content - @Current.Answer</span>
+            <div id="questions" class="col-sm-6 col-lg-8">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        @Each.Questions
+                        <div class="panel panel-primary answer">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dr Clockwork</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Current.Answer
+                            </div>
+                        </div>
+                        <div class="panel panel-info question">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Current.From - @Current.DateAsked</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Current.Content
+                            </div>
+                        </div>
+                        @EndEach
+                    </div>
+                </div>
             </div>
-            @EndEach
         </div>
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="/Scripts/jquery.signalR-1.1.3.min.js"></script>

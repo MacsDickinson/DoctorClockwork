@@ -1,9 +1,8 @@
 ﻿body {
-    background: #3E3E42;
-    font-family: 'pixel';
+    padding: 15px;
 }
 
-@font-face {
+/*@font-face {
     font-family: "pixel";
     src: url(thin_pixel-7.ttf) format("truetype");
 }
@@ -46,4 +45,4 @@
     float: right;
     width: 80%;
     padding: 8px;
-}
+}*/
