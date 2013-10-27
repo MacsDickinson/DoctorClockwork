@@ -2,26 +2,34 @@
     var hub = $.connection.clockworkHub;
 
     hub.client.broadcastAnswer = function (question, answer, name) {
+        var $convo = $('<div />', {            
+            'class': 'conversation'
+        });
         var $question = $('<div \>', {
             'class': 'bubble bubble-question bubble-new fade'
         });
         $question.append($('<h3 />', {
             text: name
+        }).append('<span />', {
+            'class': 'glyphicon glyphicon-phone'
         }));
         $question.append($('<p />', {
             text: question
         }));
-        $('#questions').prepend($question);
+        $convo.append($question);
         var $answer = $('<div \>', {
             'class': 'bubble bubble-answer bubble-new fade'
         });
         $answer.append($('<h3 />', {
             text: 'Dr Clockwork'
+        }).append('<span />', {
+            'class': 'glyphicon glyphicon-phone'
         }));
         $answer.append($('<p />', {
-            text: answer
+            text: ' ' + answer
         }));
-        $('#questions').prepend($answer);
+        $convo.append($answer);
+        $('#questions').prepend($convo);
     };
 
     $.connection.hub.start();
