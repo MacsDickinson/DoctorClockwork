@@ -20,8 +20,13 @@
         </div>
         <div id="questions" class="container">
             @Each.Questions
-            <div class="question">
-                <span>@Current.Content - @Current.Answer</span>
+            <div class="row">
+                <div class="question col-md-6">
+                    @Current.Content
+                </div>
+                <div class="answer col-md-6">
+                    @Current.Answer
+                </div>
             </div>
             @EndEach
         </div>
