@@ -36,6 +36,17 @@ h1, h2, h3, h4, h5 {
         font-size: 4.0em;
     }
 
+.credits {
+    background-color: #d1d2d4;
+    color: #333;
+}
+
+    .credits img {
+        padding: 3px;
+        display: block;
+        margin: 0 auto;
+    }
+
 .creads-large-placeholder {
     display: none;
 }
