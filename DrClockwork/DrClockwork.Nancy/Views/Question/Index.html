@@ -2,17 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Dr Clockwork</title>
-    <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap.min.css" type="text/css" />
-    <link media="all" rel="stylesheet" href="/content/bootstrap/bootstrap-responsive.min.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 </head>
     <body>
-        <header class="container">
-            <div class="span4">
-                <img src="/Content/dr-clockwork-logo.png" alt="Dr. Clockwork - Ask me anything"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/Content/mad_scientist_frog.png" alt="Dr. Clockwork - Ask me anything"/>
+                </div>
+                <div class="col-md-8">
+                    <h1>Dr. Clockwork</h1>
+                </div>
             </div>
-            <div class="span8">
-                <h1>Dr. Clockwork</h1>
+        </div>
+        <div class="container">
+            @Each.Questions
+            <div class="question">
+                <span>@Current.Content - @Current.Answer</span>
             </div>
+<<<<<<< HEAD
         </header>
         @Each.Questions
         <div class="questions">
@@ -24,5 +33,11 @@
         <script type="text/javascript" src="/signalr/hubs"></script>
         <script src="/Scripts/bootstrap.min.js"></script>
         <script src="/Scripts/clockworkHub.js"></script>
+=======
+            @EndEach
+        </div>
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+>>>>>>> f075dbe575c2a1370cef1ddee5f5c702ba58e146
     </body>
 </html>
