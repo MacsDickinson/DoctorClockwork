@@ -15,11 +15,14 @@
             </div>
         </header>
         @Each.Questions
-        <div class="question">
+        <div class="questions">
             <span>@Current.Content - @Current.Answer</span>
         </div>
         @EndEach
         <script src="/Scripts/jquery-1.9.1.min.js"></script>
+        <script src="/Scripts/jquery.signalR-1.1.1.min.js"></script>
+        <script type="text/javascript" src="/signalr/hubs"></script>
         <script src="/Scripts/bootstrap.min.js"></script>
+        <script src="/Scripts/clockworkHub.js"></script>
     </body>
 </html>

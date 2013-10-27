@@ -107,6 +107,8 @@
     <Content Include="Scripts\clockworkHub.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.1.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.1.min.js" />
     <Content Include="Scripts\jquery.signalR-1.1.3.js" />
     <Content Include="Scripts\jquery.signalR-1.1.3.min.js" />
     <Content Include="Views\Question\Index.html" />
