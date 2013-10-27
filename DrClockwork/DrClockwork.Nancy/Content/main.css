@@ -6,7 +6,6 @@
 }
 
 .mad-prof {
-    text-align: center;
 }
 
 h1, h2, h3, h4, h5 {
@@ -26,6 +25,7 @@ h1, h2, h3, h4, h5 {
 
 .creds {
     color: #d1d2d4;
+    text-align: center;
 }
 
     .creds h1 {
@@ -34,6 +34,18 @@ h1, h2, h3, h4, h5 {
 
     .creds h2 {
         font-size: 4.0em;
+    }
+    .creds h4 {
+        font-size: 1.5em;
+    }
+.credits {
+    font-size: 1.5em;
+}
+
+    .credits img {
+        padding: 3px;
+        display: block;
+        margin: 0 auto;
     }
 
 .creads-large-placeholder {

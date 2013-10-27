@@ -2,26 +2,38 @@
     var hub = $.connection.clockworkHub;
 
     hub.client.broadcastAnswer = function (question, answer, name) {
-        var $question = $('<div \>', {
-            'class': 'bubble bubble-question bubble-new fade'
+        var $convo = $('<div />', {            
+            'class': 'conversation'
         });
-        $question.append($('<h3 />', {
-            text: name
-        }));
-        $question.append($('<p />', {
-            text: question
-        }));
-        $('#questions').prepend($question);
         var $answer = $('<div \>', {
             'class': 'bubble bubble-answer bubble-new fade'
         });
-        $answer.append($('<h3 />', {
-            text: 'Dr Clockwork'
-        }));
+        var $aH = $('<h3 />', {
+            text: ' Dr Clockwork'
+        });
+        $aH.prepend('<span />', {
+            'class': 'glyphicon glyphicon-phone'
+        });
+        $answer.append($aH);
         $answer.append($('<p />', {
-            text: answer
+            text: ' ' + answer
         }));
-        $('#questions').prepend($answer);
+        $convo.append($answer);
+        var $question = $('<div \>', {
+            'class': 'bubble bubble-question bubble-new fade'
+        });
+        var $qh = $('<h3 />', {
+            text: ' ' + name
+        });
+        $qh.prepend('<span />', {
+            'class': 'glyphicon glyphicon-phone'
+        });
+        $question.append($qh);
+        $question.append($('<p />', {
+            text: question
+        }));
+        $convo.append($question);
+        $('#questions').prepend($convo);
     };
 
     $.connection.hub.start();
