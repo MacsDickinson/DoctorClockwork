@@ -1,6 +1,16 @@
 ﻿body {
     padding: 15px;
 }
+.mad-prof {
+    text-align: center;
+}
+
+.mad-prof img {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
 
 /*@font-face {
     font-family: "pixel";
