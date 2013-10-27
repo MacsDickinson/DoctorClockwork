@@ -106,8 +106,10 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bottom-left-left.pdn" />
+    <Content Include="Content\clockwork-logo.png" />
     <Content Include="Content\dr-clockwork-logo.png" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\hack-manchester-logo.png" />
     <Content Include="Content\mad_scientist_frog.png" />
     <Content Include="Content\thin_pixel-7.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />

@@ -15,7 +15,7 @@ namespace DrClockwork.Nancy.Modules
         public AskModule(IDocumentSession documentSession, IHubContext hubContext)
             : base("Ask")
         {
-            Get["/"] = _ =>
+            Post["/"] = _ =>
             {
                 try
                 {

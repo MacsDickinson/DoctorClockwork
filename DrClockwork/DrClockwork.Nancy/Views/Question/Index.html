@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/Content/main.css"/>
+    <script type="text/javascript" src="//use.typekit.net/yyv7ikw.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 </head>
     <body>
         <div class="row">
@@ -31,6 +33,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div id="questions" class="col-md-8">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -53,6 +56,17 @@
                         </div>
                         @EndEach
                     </div>
+=======
+        </div>
+        <div id="questions" class="container">
+            @Each.Questions
+            <div class="row">
+                <div class="question col-md-6">
+                    @Current.Content
+                </div>
+                <div class="answer col-md-6">
+                    @Current.Answer
+>>>>>>> fd20d41a210522aa9292f057cd5a1abb1ef4d5ae
                 </div>
             </div>
         </div>
