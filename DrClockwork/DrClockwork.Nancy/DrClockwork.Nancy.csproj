@@ -136,7 +136,9 @@
     <Content Include="aiml\Inquiry.aiml" />
     <Content Include="aiml\Interjection.aiml" />
     <Content Include="aiml\IU.aiml" />
-    <Content Include="aiml\Knowledge.aiml" />
+    <Content Include="aiml\Knowledge.aiml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="aiml\Literature.aiml" />
     <Content Include="aiml\Money.aiml" />
     <Content Include="aiml\Movies.aiml" />
