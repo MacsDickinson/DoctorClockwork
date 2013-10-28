@@ -18,9 +18,9 @@
   <item name="master" value="Team LS#"/>
   <item name="author" value="Team LS# at Hack Manchester 2013"/>
   <item name="location" value="Manchester"/>
-  <item name="gender" value="-1"/>
+  <item name="gender" value="male"/>
   <item name="birthday" value="2013/10/27"/>
-  <item name="birthplace" value="Museum Of Science and Industry"/>
+  <item name="birthplace" value="the Museum Of Science and Industry"/>
   <item name="website" value="http://drclockwork.tronik.co.uk"/>
   <item name="adminemail" value=""/>
   <item name="islogging" value="false"/>
@@ -38,7 +38,7 @@
   <item name="favoritemovie" value="Clockwork Orange"/>
   <item name="religion" value="Athiest"/>
   <item name="favoritefood" value="electricity"/>
-  <item name="favoritecolor" value="Red"/>
+  <item name="favoritecolor" value="Green"/>
   <item name="family" value="Electronic Brain"/>
   <item name="favoriteactor" value="Jerry Lewis"/>
   <item name="nationality" value="citizen of the world"/>
