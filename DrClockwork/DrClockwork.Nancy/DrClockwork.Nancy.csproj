@@ -142,7 +142,9 @@
     <Content Include="aiml\Literature.aiml" />
     <Content Include="aiml\Money.aiml" />
     <Content Include="aiml\Movies.aiml" />
-    <Content Include="aiml\Music.aiml" />
+    <Content Include="aiml\Music.aiml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="aiml\Personality.aiml" />
     <Content Include="aiml\Philosophy.aiml" />
     <Content Include="aiml\Pickup.aiml" />
