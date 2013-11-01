@@ -1,3 +1,4 @@
+using System.Web;
 using DrClockwork.Domain.Models;
 
 namespace DrClockwork.Nancy.ViewModels
@@ -30,7 +31,7 @@ namespace DrClockwork.Nancy.ViewModels
         {
             To = question.ToPhoneNumber;
             From = question.FromPhoneNumber;
-            Content = question.Content;
+            Content = HttpUtility.HtmlEncode(question.Content);
             Msg_Id = question.MessageId;
             DateAsked = question.DateAsked.ToString("g");
             Keyword = question.Keyword;
