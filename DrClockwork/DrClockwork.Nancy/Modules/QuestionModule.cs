@@ -18,10 +18,10 @@ namespace DrClockwork.Nancy.Modules
                 var questions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
 
                 var model = new IndexViewModel
-                {
-                    Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
-                };
-                model.Count = model.Questions.Count();
+                    {
+                        Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
+                        Count = documentSession.Query<Question>().Count(),
+                    };
                 return View["Index", model];
             };
         }
