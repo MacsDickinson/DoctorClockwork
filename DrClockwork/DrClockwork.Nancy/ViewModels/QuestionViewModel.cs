@@ -1,4 +1,3 @@
-using System.Web;
 using DrClockwork.Domain.Models;
 
 namespace DrClockwork.Nancy.ViewModels
@@ -26,6 +25,7 @@ namespace DrClockwork.Nancy.ViewModels
         public string DateAsked { get; set; }
         public string Keyword { get; set; }
         public string Answer { get; set; }
+        public MessageChannel Channel { get; set; }
 
         public QuestionViewModel(Question question)
         {
@@ -37,5 +37,11 @@ namespace DrClockwork.Nancy.ViewModels
             Keyword = question.Keyword;
             Answer = question.Answer;
         }
+    }
+
+    public enum MessageChannel
+    {
+        SMS,
+        Twitter
     }
 }
