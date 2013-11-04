@@ -195,6 +195,7 @@
     <Compile Include="Raven\RavenSessionProvider.cs" />
     <Compile Include="ViewModels\AskViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\MessageChannel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

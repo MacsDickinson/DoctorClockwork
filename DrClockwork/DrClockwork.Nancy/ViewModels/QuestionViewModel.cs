@@ -1,32 +1,15 @@
 using DrClockwork.Domain.Models;
+using TweetSharp;
 
 namespace DrClockwork.Nancy.ViewModels
 {
     public class QuestionViewModel
     {
-        private string _from;
+        #region Fields
+        private string _from; 
+        #endregion
 
-        public string To { get; set; }
-
-        public string From
-        {
-            get
-            {
-                return string.Format("{0}*****{1}", _from.Substring(0, 2), _from.Substring(7, _from.Length - 7));
-            }
-            set
-            {
-                _from = value;
-            }
-        }
-
-        public string Content { get; set; }
-        public string Msg_Id { get; set; }
-        public string DateAsked { get; set; }
-        public string Keyword { get; set; }
-        public string Answer { get; set; }
-        public MessageChannel Channel { get; set; }
-
+        #region Constructors
         public QuestionViewModel(Question question)
         {
             To = question.ToPhoneNumber;
@@ -37,11 +20,42 @@ namespace DrClockwork.Nancy.ViewModels
             Keyword = question.Keyword;
             Answer = question.Answer;
         }
-    }
 
-    public enum MessageChannel
-    {
-        SMS,
-        Twitter
+        public QuestionViewModel(TwitterStatus twitterStatus)
+        {
+            To = "";
+            From = twitterStatus.Author.ScreenName;
+            Content = twitterStatus.Text;
+            Msg_Id = "";
+            DateAsked = twitterStatus.CreatedDate.ToShortDateString();
+            Keyword = "";
+            Answer = "TODO";
+        }
+        #endregion
+
+        #region Properties
+        public string To { get; set; }
+        public string From
+        {
+            get
+            {
+                if (Channel == MessageChannel.Twitter)
+                {
+                    return _from;
+                }
+                return string.Format("{0}*****{1}", _from.Substring(0, 2), _from.Substring(7, _from.Length - 7));
+            }
+            set
+            {
+                _from = value;
+            }
+        }
+        public string Content { get; set; }
+        public string Msg_Id { get; set; }
+        public string DateAsked { get; set; }
+        public string Keyword { get; set; }
+        public string Answer { get; set; }
+        public MessageChannel Channel { get; set; } 
+        #endregion
     }
 }

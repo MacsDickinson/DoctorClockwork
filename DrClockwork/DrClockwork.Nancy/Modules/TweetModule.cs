@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DrClockwork.Domain.Logic;
 using DrClockwork.Domain.Models;
@@ -22,23 +23,25 @@ namespace DrClockwork.Nancy.Modules
         public TweetModule(IDocumentSession documentSession, IHubContext hubContext)
             : base("Tweet")
         {
-            Post["/"] = _ =>
+            Get["/"] = _ =>
             {
                 // Twitter
                 var twitterService = new TwitterService(consumerKey, consumerSecret);
                 twitterService.AuthenticateWith(accessToken, accessTokenSecret);
                 var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
 
-                var twitterQuestions = tweets.Select(tweet => new QuestionViewModel
+                var questions = new List<QuestionViewModel>();
+                foreach (var tweet in tweets)
                 {
-                    Answer = "TODO",
-                    Channel = MessageChannel.Twitter,
-                    Content = tweet.Text,
-                    DateAsked = tweet.CreatedDate,
-                    From = tweet.User.ScreenName
-                }).ToList();
+                    var question = new QuestionViewModel(tweet);
+                    question.Channel = MessageChannel.Twitter;
+                    questions.Add(question);
+                }
 
-                var viewModel = new IndexViewModel();
+                var viewModel = new IndexViewModel
+                {
+                    Questions = questions, Count = tweets.Count()
+                };
 
                 return View["Index", viewModel];
             };

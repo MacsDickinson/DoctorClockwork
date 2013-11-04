@@ -4,7 +4,6 @@ using DrClockwork.Nancy.ViewModels;
 using Nancy;
 using Raven.Client;
 using Raven.Client.Linq;
-using TweetSharp;
 
 namespace DrClockwork.Nancy.Modules
 {
