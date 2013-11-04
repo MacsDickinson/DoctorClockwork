@@ -5,7 +5,6 @@ using DrClockwork.Nancy.ViewModels;
 using Microsoft.AspNet.SignalR;
 using Nancy;
 using Nancy.ModelBinding;
-using Nancy.Validation;
 using Raven.Client;
 
 namespace DrClockwork.Nancy.Modules

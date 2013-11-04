@@ -1,8 +1,6 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using DrClockwork.Domain.Models;
 using DrClockwork.Nancy.ViewModels;
-using Microsoft.AspNet.SignalR;
 using Nancy;
 using Raven.Client;
 using Raven.Client.Linq;
@@ -15,14 +13,16 @@ namespace DrClockwork.Nancy.Modules
         {
             Get["/"] = _ =>
             {
+                // RavenDB
                 var questions = documentSession.Query<Question>().OrderByDescending(x => x.DateAsked).ToList();
 
-                var model = new IndexViewModel
+                var viewModel = new IndexViewModel
                     {
                         Questions = questions.Select(x => new QuestionViewModel(x)).ToList(),
                         Count = documentSession.Query<Question>().Count(),
                     };
-                return View["Index", model];
+                
+                return View["Index", viewModel];
             };
         }
     }
