@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DrClockwork.Domain.Logic;
 using DrClockwork.Domain.Models;
 using DrClockwork.Nancy.ViewModels;
@@ -7,51 +8,39 @@ using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Validation;
 using Raven.Client;
+using TweetSharp;
 
 namespace DrClockwork.Nancy.Modules
 {
     public class TweetModule : NancyModule
     {
+        private const string consumerKey = "u67Ns1KSSYZWiGh1jJrPxw";
+        private const string consumerSecret = "MhwBuBOyF1KSU9EICA3no79axmbn8kfBPPCZDyTJU";
+        private const string accessToken = "2161079472-XvChIme92Yxhx7cIr43WAuAvazKHvsVFzmhae6k";
+        private const string accessTokenSecret = "QZ1c0uO3161aoD9GWqOwcBYJUU2tj1EGnU10iyEoBHXzB";
+
         public TweetModule(IDocumentSession documentSession, IHubContext hubContext)
             : base("Tweet")
         {
             Post["/"] = _ =>
             {
-                try
+                // Twitter
+                var twitterService = new TwitterService(consumerKey, consumerSecret);
+                twitterService.AuthenticateWith(accessToken, accessTokenSecret);
+                var tweets = twitterService.ListTweetsMentioningMe(new ListTweetsMentioningMeOptions());
+
+                var twitterQuestions = tweets.Select(tweet => new QuestionViewModel
                 {
-                    var model = this.Bind<AskViewModel>();
+                    Answer = "TODO",
+                    Channel = MessageChannel.Twitter,
+                    Content = tweet.Text,
+                    DateAsked = tweet.CreatedDate,
+                    From = tweet.User.ScreenName
+                }).ToList();
 
-                    var pathToAiml = System.Web.HttpContext.Current.Server.MapPath(@"~/aiml");
+                var viewModel = new IndexViewModel();
 
-                    var drClockwork = new DoctorClockwork(pathToAiml);
-
-                    var answer = drClockwork.AskMeAnything(model.From, model.Content);
-
-                    ClockworkSMS.Send(model.From, answer);
-
-                    var question = new Question
-                    {
-                        ToPhoneNumber = model.To,
-                        FromPhoneNumber = model.From,
-                        DateAsked = DateTime.Now,
-                        Content = model.Content,
-                        MessageId = model.Msg_Id,
-                        Keyword = model.Keyword,
-                        Answer = answer
-                    };
-
-                    documentSession.Store(question);
-                    documentSession.SaveChanges();
-                    var from = string.Format("{0}*****{1}", model.From.Substring(0, 2), model.From.Substring(7, model.From.Length - 7));
-                    hubContext.Clients.All.broadcastAnswer(model.Content, answer, from);
-
-                    return null;
-                }
-                catch (Exception ex)
-                {
-                    return string.Format("Message: {0}\r\nDetail {1}", ex.Message, ex.StackTrace);
-                }
-                
+                return View["Index", viewModel];
             };
         }
     }
